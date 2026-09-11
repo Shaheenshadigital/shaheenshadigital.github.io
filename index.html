@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Shaheen Sha — Digital Marketer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161513;
+    --panel:#201e1a;
+    --paper:#f0ece4;
+    --amber:#d98a3f;
+    --amber-bright:#eea15b;
+    --muted:#a39c92;
+    --muted-dim:#726a60;
+    --line:rgba(240,236,228,0.10);
+    --radius:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;color-scheme:dark;background:#161513;}
+  body{font-family:'Inter',sans-serif;background-color:#161513;color:#f0ece4;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3{font-family:'Fraunces',serif;letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;position:relative;}
+  img{max-width:100%;display:block;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber-bright);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(22,21,19,0.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:18px;text-decoration:none;color:var(--paper);}
+  .navlinks{display:flex;gap:30px;list-style:none;}
+  .navlinks a{font-size:13px;text-decoration:none;color:var(--muted);transition:color .15s;}
+  .navlinks a:hover{color:var(--amber-bright);}
+  @media (max-width:640px){.navlinks{display:none;}}
+
+  header.hero{position:relative;padding:72px 0 60px;overflow:hidden;border-bottom:1px solid var(--line);max-width:100vw;}
+  .bg-type{
+    position:absolute;top:40%;left:0;transform:translateY(-50%);
+    font-family:'Fraunces',serif;font-weight:700;font-size:clamp(48px,9vw,150px);
+    color:rgba(240,236,228,0.05);-webkit-text-stroke:1.5px rgba(240,236,228,0.14);
+    white-space:nowrap;pointer-events:none;letter-spacing:-0.02em;line-height:1;
+    max-width:100vw;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:end;position:relative;}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;}}
+  .eyebrow-role{font-size:13px;color:var(--amber-bright);letter-spacing:0.02em;margin-bottom:16px;}
+  .hero h1{font-size:clamp(42px,6.6vw,74px);font-weight:600;line-height:1.0;color:var(--paper);}
+  .hero .role-line{display:block;font-size:clamp(17px,2.2vw,24px);color:var(--muted);font-weight:400;margin-top:12px;font-family:'Inter',sans-serif;}
+  .hero p.lead{margin-top:24px;font-size:16px;color:var(--muted);max-width:44ch;}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:13px 24px;font-size:13.5px;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:background .15s, border-color .15s;}
+  .btn-primary{background:var(--amber);color:#1a1512;}
+  .btn-primary:hover{background:var(--amber-bright);}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--amber-bright);color:var(--amber-bright);}
+
+  .hero-photo-wrap{position:relative;}
+  .grid-backdrop{
+    position:absolute;inset:-16px 16px 16px -16px;
+    background-image:linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:22px 22px;border-radius:var(--radius);z-index:0;
+  }
+  .photo-slot{
+    position:relative;z-index:1;border:1.5px dashed rgba(240,236,228,0.28);
+    background:rgba(240,236,228,0.02);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;color:var(--muted);font-size:12px;padding:18px;gap:4px;border-radius:var(--radius);
+  }
+  .photo-slot strong{color:var(--paper);font-size:13px;font-weight:600;}
+  .hero-photo{width:100%;aspect-ratio:3/4;}
+
+  .section{padding:88px 0;border-bottom:1px solid var(--line);}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap;}
+  .section-head .kicker{font-size:13px;color:var(--amber-bright);margin-bottom:8px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,36px);font-weight:600;color:var(--paper);}
+  .section-head p{color:var(--muted);font-size:14.5px;max-width:34ch;}
+
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
+  .about-photo .photo-slot{aspect-ratio:4/5;}
+  .quote{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,25px);line-height:1.4;color:var(--paper);font-weight:500;}
+  .quote .accent{color:var(--amber-bright);}
+  .about-copy p{color:var(--muted);font-size:15px;margin-top:20px;max-width:52ch;}
+
+  .case{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;padding:56px 0;border-top:1px solid var(--line);align-items:center;}
+  .case:first-of-type{border-top:none;padding-top:0;}
+  .case.reverse{grid-template-columns:1.15fr 0.85fr;}
+  .case.reverse .case-media{order:2;}
+  @media (max-width:800px){.case,.case.reverse{grid-template-columns:1fr;}.case.reverse .case-media{order:0;}}
+  .case-media .photo-slot{width:100%;aspect-ratio:4/3;}
+  .case-tag{font-size:12.5px;color:var(--amber-bright);font-weight:500;margin-bottom:10px;}
+  .case h3{font-size:23px;font-weight:600;margin-bottom:12px;color:var(--paper);}
+  .case p{color:var(--muted);font-size:15px;max-width:48ch;}
+  .case-stats{display:flex;gap:28px;margin-top:22px;flex-wrap:wrap;}
+  .case-stats div span{display:block;font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:500;color:var(--paper);}
+  .case-stats div small{color:var(--muted-dim);font-size:12px;}
+  .case-link{display:inline-flex;align-items:center;gap:6px;margin-top:22px;font-size:14px;font-weight:500;text-decoration:none;border-bottom:1px solid var(--amber-bright);padding-bottom:2px;color:var(--amber-bright);}
+
+  .skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:760px){.skill-groups{grid-template-columns:1fr;}}
+  .skill-col{background:var(--bg);padding:28px;}
+  .skill-col h4{font-size:12.5px;color:var(--amber-bright);font-weight:500;margin-bottom:16px;}
+  .skill-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .skill-col li{font-size:14.5px;color:var(--paper);}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:16px;}
+  @media (max-width:700px){.tools-grid{grid-template-columns:repeat(3,1fr);}}
+  .tool-box{border:1px solid var(--line);border-radius:var(--radius);padding:20px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--panel);transition:border-color .15s;}
+  .tool-box:hover{border-color:var(--amber);}
+  .tool-dot{width:26px;height:26px;border-radius:50%;background:var(--amber);opacity:0.85;}
+  .tool-box span{font-size:11.5px;color:var(--muted);text-align:center;}
+
+  .contact{padding:96px 0;}
+  .contact h2{font-size:clamp(30px,5vw,46px);font-weight:600;max-width:16ch;line-height:1.12;color:var(--paper);}
+  .contact-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:40px;flex-wrap:wrap;gap:24px;}
+  .contact-links{display:flex;gap:24px;flex-wrap:wrap;}
+  .contact-links a{font-size:14.5px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;color:var(--paper);}
+  .contact-links a:hover{border-color:var(--amber-bright);color:var(--amber-bright);}
+
+  footer{padding:28px 0;}
+  footer .wrap{display:flex;justify-content:space-between;color:var(--muted-dim);font-size:12.5px;flex-wrap:wrap;gap:8px;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">Shaheen Sha</a>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bg-type">DIGITAL MARKETER</div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-role">Tamil Nadu, India · Relocating to Dubai</div>
+      <h1>Shaheen Sha<span class="role-line">Digital Marketer — SEO &amp; Paid Media</span></h1>
+      <p class="lead">Five years running retail stores taught me how customers actually buy. Now I apply that end-to-end: SEO, Google Shopping, Meta Ads, and the tracking that ties it together — built and proven on my own e-commerce store.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="grid-backdrop"></div>
+      <div class="photo-slot hero-photo">
+        <strong>Profile photo</strong>
+        White shirt, black blazer — grayscale/B&amp;W works best on this theme
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="photo-slot">
+          <strong>Working photo</strong>
+          800×1000px — at a laptop or on the store
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom:20px;">
+          <div>
+            <div class="kicker">Know</div>
+            <h2>About me</h2>
+          </div>
+        </div>
+        <p class="quote">"I'm a digital marketer focused on <span class="accent">SEO, paid media, and the tracking</span> that proves it's working — built hands-on, not just studied."</p>
+        <div class="about-copy">
+          <p>Five years managing retail fashion stores gave me a direct read on how customers decide to buy. I moved that instinct online — building a live Shopify store from the ground up, running its Google Shopping and Meta Ads campaigns, wiring up GA4/GTM tracking, and running a full SEO sprint to grow organic traffic.</p>
+          <p>I'm certified across Google Ads, GA4, GTM, Meta Ads, and Klaviyo — and I'm currently relocating to Dubai, looking for an entry-level digital marketing role where I can own a small brand's SEO and paid media end to end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Selected work</div>
+        <h2>Projects</h2>
+      </div>
+      <p>Each project was built to solve a real marketing problem, then measured — not just designed to look good.</p>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-media">
+        <div class="photo-slot">
+          <strong>8knotclothing.store screenshot</strong>
+          1200×900px, storefront or ad dashboard view
+        </div>
+      </div>
+      <div>
+        <div class="case-tag">E-commerce · SEO · Paid Media · Tracking</div>
+        <h3>8knot Clothing — full-funnel store build</h3>
+        <p>Built a live Shopify store from scratch: product feed, on-page SEO, GA4 + GTM tracking, Google Shopping campaigns, and Meta Advantage+ catalogue ads — the whole marketing function, run solo.</p>
+        <div class="case-stats">
+          <div><span>4.2x</span><small>ROAS</small></div>
+          <div><span>Live</span><small>store, built solo</small></div>
+          <div><span>100%</span><small>tracking coverage</small></div>
+        </div>
+        <a href="https://8knotclothing.store" target="_blank" class="case-link">Visit the live store →</a>
+      </div>
+    </div>
+
+    <div class="case reverse reveal">
+      <div class="case-media">
+        <div class="photo-slot">
+          <strong>SEO sprint screenshot</strong>
+          1200×900px, ranking report or Search Console graph
+        </div>
+      </div>
+      <div>
+        <div class="case-tag">Organic growth · Technical SEO</div>
+        <h3>SEO sprint on a personal streetwear store</h3>
+        <p>Ran a hands-on SEO project covering technical fixes, on-page structure, and content — tracked weekly against Search Console data to see what actually moved rankings.</p>
+        <div class="case-stats">
+          <div><span>+186%</span><small>organic sessions</small></div>
+          <div><span>12 wks</span><small>sprint length</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-media">
+        <div class="photo-slot">
+          <strong>E-book cover / product page</strong>
+          1200×900px, product mockup
+        </div>
+      </div>
+      <div>
+        <div class="case-tag">Digital product · Content</div>
+        <h3>The Colour &amp; Style System</h3>
+        <p>Designed, wrote, and launched a ₹49 men's style e-book directly on the 8knot Shopify store — end to end, from concept to checkout page.</p>
+        <div class="case-stats">
+          <div><span>₹49</span><small>price point</small></div>
+          <div><span>1</span><small>solo build</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Capabilities</div>
+        <h2>What I work with</h2>
+      </div>
+      <p>Certified and hands-on across the tools that run a small brand's entire marketing function.</p>
+    </div>
+    <div class="skill-groups reveal">
+      <div class="skill-col">
+        <h4>SEO &amp; content</h4>
+        <ul>
+          <li>Technical &amp; on-page SEO</li>
+          <li>Keyword research</li>
+          <li>Content structure &amp; copy</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Paid media</h4>
+        <ul>
+          <li>Google Ads — Search &amp; Shopping</li>
+          <li>Meta Advantage+ catalogue ads</li>
+          <li>Campaign structuring &amp; pacing</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Analytics &amp; commerce</h4>
+        <ul>
+          <li>GA4 &amp; Google Tag Manager</li>
+          <li>Shopify store builds</li>
+          <li>Klaviyo email flows</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:56px;">
+      <div class="kicker" style="margin-bottom:4px;">Tools I use</div>
+      <div class="tools-grid">
+        <div class="tool-box"><div class="tool-dot"></div><span>Google Analytics</span></div>
+        <div class="tool-box"><div class="tool-dot"></div><span>Google Ads</span></div>
+        <div class="tool-box"><div class="tool-dot"></div><span>Meta Ads Manager</span></div>
+        <div class="tool-box"><div class="tool-dot"></div><span>Google Tag Manager</span></div>
+        <div class="tool-box"><div class="tool-dot"></div><span>Shopify</span></div>
+        <div class="tool-box"><div class="tool-dot"></div><span>Klaviyo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Open to entry-level digital marketing roles in Dubai.</h2>
+    <div class="contact-row reveal">
+      <p style="color:var(--muted);font-size:15px;max-width:42ch;">Relocating from Tamil Nadu, India. Available for interviews and happy to walk through any of the work above in detail.</p>
+      <div class="contact-links">
+        <a href="mailto:shaheen@shaheensha.in">shaheen@shaheensha.in</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="https://8knotclothing.store" target="_blank">8knotclothing.store</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Shaheen Sha</span>
+    <span class="mono">shaheensha.in</span>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
