@@ -111,10 +111,10 @@
 
   .tools-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:16px;}
   @media (max-width:700px){.tools-grid{grid-template-columns:repeat(3,1fr);}}
-  .tool-box{border:1px solid var(--line);border-radius:var(--radius);padding:20px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;background:var(--panel);transition:border-color .15s;}
-  .tool-box:hover{border-color:var(--amber);}
-  .tool-box img{max-width:26px;max-height:26px;object-fit:contain;}
-  .tool-box span{font-size:11.5px;color:var(--muted);text-align:center;}
+  .tool-box{border:1px solid var(--line);border-radius:var(--radius);padding:20px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;background:#ffffff;transition:border-color .15s, transform .15s;}
+  .tool-box:hover{border-color:var(--amber);transform:translateY(-2px);}
+  .tool-box img{max-width:28px;max-height:28px;object-fit:contain;}
+  .tool-box span{font-size:11.5px;color:#1a1a1a;font-weight:600;text-align:center;}
 
   .contact{padding:96px 0;}
   .contact h2{font-size:clamp(30px,5vw,46px);font-weight:600;max-width:16ch;line-height:1.12;color:var(--paper);}
@@ -125,6 +125,13 @@
 
   footer{padding:28px 0;}
   footer .wrap{display:flex;justify-content:space-between;color:var(--muted-dim);font-size:12.5px;flex-wrap:wrap;gap:8px;}
+
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:760px){.cert-grid{grid-template-columns:1fr;}}
+  .cert-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--panel);}
+  .cert-card .cert-issuer{font-size:11.5px;color:var(--amber-bright);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;}
+  .cert-card h4{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--paper);margin-bottom:6px;}
+  .cert-card p{font-size:13px;color:var(--muted);}
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
@@ -138,6 +145,7 @@
     <ul class="navlinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -150,7 +158,7 @@
     <div>
       <div class="eyebrow-role">Tamil Nadu, India · Relocating to Dubai</div>
       <h1>Shaheen Sha<span class="role-line">Digital Marketer — SEO &amp; Paid Media</span></h1>
-      <p class="lead">Five years running retail stores taught me how customers actually buy. Now I apply that end-to-end: SEO, Google Shopping, Meta Ads, and the tracking that ties it together — built and proven on my own e-commerce store.</p>
+      <p class="lead">Five years running retail stores taught me how customers actually buy. Now I apply that end-to-end: <strong style="color:var(--paper);">SEO</strong>, <strong style="color:var(--paper);">Google Shopping</strong>, <strong style="color:var(--paper);">Meta Ads</strong>, and the tracking that ties it together — built and proven on my own e-commerce store.</p>
       <div class="hero-cta">
         <a href="#work" class="btn btn-primary">See the work</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -252,6 +260,50 @@
           <div><span>₹49</span><small>price point</small></div>
           <div><span>1</span><small>solo build</small></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="certifications">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Verified</div>
+        <h2>Certifications</h2>
+      </div>
+      <p>Self-acquired, hands-on certifications across the platforms I use daily.</p>
+    </div>
+    <div class="cert-grid reveal">
+      <div class="cert-card">
+        <div class="cert-issuer">Google</div>
+        <h4>Google Ads — Search &amp; Shopping</h4>
+        <p>Campaign structure, bidding, and Shopping feed optimization.</p>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google</div>
+        <h4>Google Analytics 4 (GA4)</h4>
+        <p>Event-based tracking, funnels, and conversion reporting.</p>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Google</div>
+        <h4>Google Tag Manager</h4>
+        <p>Tag deployment, triggers, and cross-platform tracking setup.</p>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Meta</div>
+        <h4>Meta Ads</h4>
+        <p>Advantage+ catalogue campaigns and audience targeting.</p>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Klaviyo</div>
+        <h4>Klaviyo Email Marketing</h4>
+        <p>Flow automation, segmentation, and retention campaigns.</p>
+      </div>
+      <div class="cert-card">
+        <div class="cert-issuer">Self-directed</div>
+        <h4>Technical &amp; On-Page SEO</h4>
+        <p>Applied hands-on across a live SEO sprint — see Projects.</p>
       </div>
     </div>
   </div>
