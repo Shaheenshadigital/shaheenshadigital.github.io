@@ -83,7 +83,10 @@
 
   .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
   @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
-  .about-photo .photo-slot{aspect-ratio:4/5;}
+  .about-graphic{
+    aspect-ratio:4/5;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--panel);display:flex;align-items:center;justify-content:center;padding:32px;
+  }
   .quote{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,25px);line-height:1.4;color:var(--paper);font-weight:500;}
   .quote .accent{color:var(--amber-bright);}
   .about-copy p{color:var(--muted);font-size:15px;margin-top:20px;max-width:52ch;}
@@ -179,11 +182,27 @@
 <section class="section" id="about">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-photo reveal">
-        <div class="photo-slot">
-          <strong>Working photo</strong>
-          800×1000px — at a laptop or on the store
-        </div>
+      <div class="about-graphic reveal">
+        <svg width="100%" height="100%" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- laptop base -->
+          <rect x="35" y="150" width="150" height="10" rx="2" fill="var(--muted-dim)" opacity="0.5"/>
+          <path d="M45 150 L55 90 L165 90 L175 150 Z" stroke="var(--muted-dim)" stroke-width="2" fill="none"/>
+          <!-- screen glow lines representing SEO/analytics -->
+          <rect x="65" y="100" width="90" height="40" rx="2" stroke="var(--amber-bright)" stroke-width="1.5" fill="none"/>
+          <polyline points="72,132 88,116 100,124 116,104 132,112 148,106" stroke="var(--amber-bright)" stroke-width="2" fill="none"/>
+          <circle cx="148" cy="106" r="3" fill="var(--amber-bright)"/>
+          <!-- magnifier / search icon floating above -->
+          <circle cx="150" cy="55" r="22" stroke="var(--paper)" stroke-width="3.5" fill="none"/>
+          <line x1="166" y1="71" x2="182" y2="87" stroke="var(--paper)" stroke-width="4.5" stroke-linecap="round"/>
+          <!-- orbiting dots representing tracking/data points -->
+          <circle cx="45" cy="50" r="4" fill="var(--amber)" opacity="0.7"/>
+          <circle cx="30" cy="80" r="3" fill="var(--amber-bright)" opacity="0.5"/>
+          <circle cx="60" cy="30" r="2.5" fill="var(--muted)" opacity="0.6"/>
+          <path d="M45 50 Q65 40 90 55" stroke="var(--line)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+          <path d="M30 80 Q55 75 70 90" stroke="var(--line)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+          <!-- desk line -->
+          <line x1="20" y1="170" x2="200" y2="170" stroke="var(--line)" stroke-width="1.5"/>
+        </svg>
       </div>
       <div class="reveal">
         <div class="section-head" style="margin-bottom:20px;">
