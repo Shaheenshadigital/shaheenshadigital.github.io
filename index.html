@@ -83,10 +83,7 @@
 
   .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
   @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
-  .about-graphic{
-    aspect-ratio:4/5;border:1px solid var(--line);border-radius:var(--radius);
-    background:var(--panel);display:flex;align-items:center;justify-content:center;padding:32px;
-  }
+  .about-photo .photo-slot{aspect-ratio:4/5;}
   .quote{font-family:'Fraunces',serif;font-size:clamp(19px,2.4vw,25px);line-height:1.4;color:var(--paper);font-weight:500;}
   .quote .accent{color:var(--amber-bright);}
   .about-copy p{color:var(--muted);font-size:15px;margin-top:20px;max-width:52ch;}
@@ -161,7 +158,7 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="bg-type">DIGITAL<br>MARKETER</div>
+  <div class="bg-type">DIGITAL &amp;<br>PERFORMANCE</div>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow-role">Tamil Nadu, India · Relocating to Dubai</div>
@@ -182,22 +179,11 @@
 <section class="section" id="about">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-graphic reveal">
-        <svg width="100%" height="100%" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="35" y="150" width="150" height="10" rx="2" fill="var(--muted-dim)" opacity="0.5"/>
-          <path d="M45 150 L55 90 L165 90 L175 150 Z" stroke="var(--muted-dim)" stroke-width="2" fill="none"/>
-          <rect x="65" y="100" width="90" height="40" rx="2" stroke="var(--amber-bright)" stroke-width="1.5" fill="none"/>
-          <polyline points="72,132 88,116 100,124 116,104 132,112 148,106" stroke="var(--amber-bright)" stroke-width="2" fill="none"/>
-          <circle cx="148" cy="106" r="3" fill="var(--amber-bright)"/>
-          <circle cx="150" cy="55" r="22" stroke="var(--paper)" stroke-width="3.5" fill="none"/>
-          <line x1="166" y1="71" x2="182" y2="87" stroke="var(--paper)" stroke-width="4.5" stroke-linecap="round"/>
-          <circle cx="45" cy="50" r="4" fill="var(--amber)" opacity="0.7"/>
-          <circle cx="30" cy="80" r="3" fill="var(--amber-bright)" opacity="0.5"/>
-          <circle cx="60" cy="30" r="2.5" fill="var(--muted)" opacity="0.6"/>
-          <path d="M45 50 Q65 40 90 55" stroke="var(--line)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
-          <path d="M30 80 Q55 75 70 90" stroke="var(--line)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
-          <line x1="20" y1="170" x2="200" y2="170" stroke="var(--line)" stroke-width="1.5"/>
-        </svg>
+      <div class="about-photo reveal">
+        <div class="photo-slot">
+          <strong>Working photo</strong>
+          800×1000px — at a laptop or on the store
+        </div>
       </div>
       <div class="reveal">
         <div class="section-head" style="margin-bottom:20px;">
@@ -231,13 +217,13 @@
         <img src="8knot-logo.png" alt="8knot Clothing logo" style="max-width:60%;max-height:60%;object-fit:contain;">
       </div>
       <div>
-        <div class="case-tag">E-commerce · SEO · Paid Media · Tracking</div>
-        <h3>8knot Clothing — full-funnel store build</h3>
-        <p>Built a live Shopify store from scratch: product feed, on-page SEO, GA4 + GTM tracking, Google Shopping campaigns, and Meta Advantage+ catalogue ads — the whole marketing function, run solo.</p>
+        <div class="case-tag">E-commerce · Paid Media · Tracking · CRM</div>
+        <h3>8knot Clothing — live e-commerce performance marketing build</h3>
+        <p>Built and launched a live Shopify store from scratch, including a self-created digital product (ebook), Razorpay payment gateway integration, and a full on-page SEO structure. Implemented full-funnel tracking across GA4, GTM, and Meta Pixel with Conversions API — verified end to end against real event data. Planned and ran paid acquisition across Meta Ads and Google Search Ads.</p>
         <div class="case-stats">
-          <div><span>4.2x</span><small>ROAS</small></div>
           <div><span>Live</span><small>store, built solo</small></div>
-          <div><span>100%</span><small>tracking coverage</small></div>
+          <div><span>7</span><small>Klaviyo automation flows</small></div>
+          <div><span>3</span><small>tracking systems unified</small></div>
         </div>
         <a href="https://8knotclothing.store" target="_blank" class="case-link">Visit the live store →</a>
         <a href="https://app.notion.com/p/8knotclothing-Portfolio-5b3363d5c8cf404f8b533148911ddcc9" target="_blank" class="case-link" style="margin-left:24px;">Read the full case study →</a>
@@ -258,13 +244,12 @@
         </svg>
       </div>
       <div>
-        <div class="case-tag">Local SEO · Technical Implementation</div>
-        <h3>End-to-end SEO for a live Shopify streetwear store</h3>
-        <p>Ran a complete SEO process on 8knot Clothing — keyword research, competitor gap analysis, on-page implementation, content strategy, and Search Console setup, all on a live store.</p>
+        <div class="case-tag">Organic growth · Technical SEO</div>
+        <h3>SEO sprint on a personal streetwear store</h3>
+        <p>Ran a hands-on SEO project covering technical fixes, on-page structure, and content — tracked weekly against Search Console data to see what actually moved rankings.</p>
         <div class="case-stats">
-          <div><span>17</span><small>keywords finalized</small></div>
-          <div><span>6</span><small>batches researched</small></div>
-          <div><span>4</span><small>blog posts published</small></div>
+          <div><span>+186%</span><small>organic sessions</small></div>
+          <div><span>12 wks</span><small>sprint length</small></div>
         </div>
         <a href="https://app.notion.com/p/SEO-3dc948038a6a807c8718f6ac941cb253" target="_blank" class="case-link">Read the full case study →</a>
       </div>
@@ -464,10 +449,10 @@
   <div class="wrap">
     <h2 class="reveal">Open to entry-level digital marketing roles in Dubai.</h2>
     <div class="contact-row reveal">
-      <p style="color:var(--muted);font-size:15px;max-width:42ch;">Relocating from Tamil Nadu, India this October — ready to start immediately. Available for interviews and happy to walk through any of the work above in detail.</p>
+      <p style="color:var(--muted);font-size:15px;max-width:42ch;">Relocating from Tamil Nadu, India. Available for interviews and happy to walk through any of the work above in detail.</p>
       <div class="contact-links">
         <a href="mailto:shaheensha.digital@gmail.com">shaheensha.digital@gmail.com</a>
-        <a href="https://www.linkedin.com/in/shaheen-sha-digitalmarketer/" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">LinkedIn</a>
         <a href="https://8knotclothing.store" target="_blank">8knotclothing.store</a>
       </div>
     </div>
